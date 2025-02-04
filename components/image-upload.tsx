@@ -89,7 +89,7 @@ export default function ImageUpload() {
     }
 
    return (
-        <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-1">
             <h2>Add Image:</h2>
             <input type="file" onChange={handleChange} />
             <div className="flex flex-col justify-center items-center gap-y-2">
