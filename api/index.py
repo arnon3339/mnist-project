@@ -13,7 +13,4 @@ def hello_fast_api():
 async def predict_emojis(request: Request):
     body = await request.json()
     img_arr = np.array(body['array'], dtype=np.uint8)
-    print(img_arr)
-    # img = Image.fromarray(img_arr.reshape((28, 28)), mode="L")
-    # img.save("./xxx.png")
     return {"predict": 0}

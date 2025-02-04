@@ -73,7 +73,6 @@ export default function ImageUpload() {
 
     const getPredict= async(e: any) => {
         e.preventDefault();
-        console.log(imageArray);
         const res = await fetch('api/py/testimg', {
             method: "POST",
             body: JSON.stringify({
@@ -85,7 +84,6 @@ export default function ImageUpload() {
         });
         if (res.ok) {
             const resData = await res.json();
-            console.log(resData);
             setPredict(resData.predict)
         }
     }
