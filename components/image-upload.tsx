@@ -95,14 +95,18 @@ export default function ImageUpload() {
             <div className="flex flex-col justify-center items-center gap-y-2">
                 {file &&
                 <>
-                    <Img
-                        src={file}
-                        layout="intrinsic"
-                        alt="test image"
-                        width={500}
-                        height={0}
-                        // style={{ width: "auto", height: "auto" }}
-                    />
+                    <div className="w-[500px] h-[500px] relative flex flex-col justify-center items-center
+                    max-md:w-[300px] max-md:h-[300px]">
+                        <Img
+                            src={file}
+                            layout="intrinsic"
+                            alt="test image"
+                            objectFit="contain"
+                            width={500}
+                            height={0}
+                            // style={{ width: "auto", height: "auto" }}
+                        />
+                    </div>
                     <button className="text-2xl font-bold border-2 border-foreground px-4 py-2 rounded-lg hover:bg-gray-800"
                         onClick={getPredict}>
                         Predict
