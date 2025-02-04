@@ -73,10 +73,11 @@ export default function ImageUpload() {
 
     const getPredict= async(e: any) => {
         e.preventDefault();
+        console.log(imageArray);
         const res = await fetch('api/py/testimg', {
             method: "POST",
             body: JSON.stringify({
-                array: imageArray 
+                array: Array.from(imageArray || [])
             }),
             headers: {
                 'Content-Type': 'application/json',
