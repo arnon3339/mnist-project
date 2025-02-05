@@ -8,7 +8,7 @@ export default function WhiteBord() {
     const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
     const [isDrawing, setIsDrawing] = useState(false);
     const [canvasSize, setCanvasSize] = useState({ width: 500, height: 500 });
-    const [canvasLineWidth, setCanvasLineWidth] = useState(20);
+    const [canvasLineWidth, setCanvasLineWidth] = useState(40);
     const [predict, setPredict] = useState<number | undefined>(undefined);
     const picaInstance = pica();
 
@@ -16,10 +16,10 @@ export default function WhiteBord() {
     const updateCanvasSize = () => {
         if (window.innerWidth <= 768) {
             setCanvasSize({ width: 300, height: 300 });
-            setCanvasLineWidth(10);
+            setCanvasLineWidth(20);
         } else {
             setCanvasSize({ width: 500, height: 500 });
-            setCanvasLineWidth(20);
+            setCanvasLineWidth(40);
         }
     };
 
@@ -43,10 +43,16 @@ export default function WhiteBord() {
                 const imageData = ctx.getImageData(0, 0, targetWidth, targetHeight);
                 const pixelArray = imageData.data;
 
-                const res = await fetch('api/py/testimg', {
+                // Convert to grayscale
+                const grayArray = new Uint8Array(targetWidth * targetHeight);
+                for (let i = 0; i < pixelArray.length; i += 4) {
+                    grayArray[i / 4] = pixelArray[i + 3];
+                }
+
+                const res = await fetch('api/py/drawimg', {
                     method: "POST",
                     body: JSON.stringify({
-                        array: Array.from(pixelArray|| [])
+                        array: Array.from(grayArray|| [])
                     }),
                     headers: {
                         'Content-Type': 'application/json',
