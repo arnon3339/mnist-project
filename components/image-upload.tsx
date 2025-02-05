@@ -115,7 +115,7 @@ export default function ImageUpload() {
                 </>
                 }
                 {!file &&
-                    <div className="block w-[500px] h-[500px] bg-transparent"></div>
+                    <div className="block w-[500px] h-[500px] max-md:w-[300px] max-md:h-[300px] bg-transparent"></div>
                 }
             </div>
         </div>

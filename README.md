@@ -1,33 +1,27 @@
 <p align="center">
   <a href="https://nextjs-fastapi-starter.vercel.app/">
     <img src="https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png" height="96">
-    <h3 align="center">Next.js FastAPI Starter</h3>
+    <h3 align="center">Digit Prediction with CNN</h3>
   </a>
 </p>
 
-<p align="center">Simple Next.j 14 boilerplate that uses <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
+<p align="center">Next.j 14 project that uses <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
 
 <br/>
 
 ## Introduction
 
-This is a hybrid Next.js 14 + Python template. One great use case of this is to write Next.js apps that use Python AI libraries on the backend, while still having the benefits of Next.js Route Handlers and Server Side Rendering.
-
-## How It Works
-
-The Python/FastAPI server is mapped into to Next.js app under `/api/`.
-
-This is implemented using [`next.config.js` rewrites](https://github.com/digitros/nextjs-fastapi/blob/main/next.config.js) to map any request to `/api/py/:path*` to the FastAPI API, which is hosted in the `/api` folder.
-
-Also, the app/api routes are available on the same domain, so you can use NextJs Route Handlers and make requests to `/api/...`.
-
-On localhost, the rewrite will be made to the `127.0.0.1:8000` port, which is where the FastAPI server is running.
-
-In production, the FastAPI server is hosted as [Python serverless functions](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python) on Vercel.
+This is the project to predict the digit value from uploaded image and drawing panel. The fronted is created by Nextjs 14. It uses FastAPI to handle image data and use it as a test image with tunned CNN model. The CNN project is a separated [repository](https://github.com/arnon3339/mnist-model.git)
 
 ## Demo
 
-https://nextjs-fastapi-starter.vercel.app/
+https://mnist-project.vercel.app/
+
+## Repositories
+
+Deployment: https://github.com/arnon3339/mnist-project.git  
+CNN model: https://github.com/arnon3339/mnist-model.git  
+Docker deployment: https://github.com/arnon3339/mnist-model.git
 
 ## Deploy Your Own
 
@@ -40,7 +34,7 @@ You can clone & deploy it to Vercel with one click:
 You can clone & create this repo with the following command
 
 ```bash
-npx create-next-app nextjs-fastapi --example "https://github.com/digitros/nextjs-fastapi"
+npx create-next-app nextjs-fastapi --example "https://github.com/arnon3339/mnist-project.git"
 ```
 
 ## Getting Started
@@ -75,6 +69,10 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 The FastApi server will be running on [http://127.0.0.1:8000](http://127.0.0.1:8000) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
+
+## Dataset
+
+The CNN model use mnist dataset that is the open source. It can be found in [Kraggle](https://www.kaggle.com). An image can be uploaded for digit prediction.
 
 ## Learn More
 

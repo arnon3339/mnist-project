@@ -10,13 +10,13 @@ export default function Wrapper() {
    return (
     <div className="flex flex-col justify-center items-center">
         <div className="flex justify-center gap-x-2 mb-4">
-            <button className={`w-56 ${!mode? "border border-white px-4 py-2 rounded-md bg-transparent": ""}`}
+            <button className={`w-56 max-md:w-32 ${!mode? "border border-white px-4 py-2 rounded-md bg-transparent": ""}`}
             onClick={(e: any) => {
                 e.preventDefault();
                 setMode(false);
             }}>
                 Image</button>
-            <button className={`w-56 ${mode? "border border-white px-4 py-2 rounded-md bg-transparent": ""}`}
+            <button className={`w-56 max-md:w-32 ${mode? "border border-white px-4 py-2 rounded-md bg-transparent": ""}`}
             onClick={(e: any) => {
                 e.preventDefault();
                 setMode(true);
