@@ -1,14 +1,15 @@
 'use client';
 
 import Img from "next/image";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import pica from "pica";
+import { PredictContext } from "./contexts/predict";
 
 export default function ImageUpload() {
     const [file, setFile] = useState<string | undefined>(undefined);
     const [imageArray, setImageArray] = useState<Uint8Array | null>(null);
-    const [predict, setPredict] = useState<number | undefined>(undefined);
     const picaInstance = pica();
+    const {setPredict} = useContext(PredictContext);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length != 0) {
@@ -111,9 +112,6 @@ export default function ImageUpload() {
                         onClick={getPredict}>
                         Predict
                     </button>
-                    <div className="text-2xl w-10 h-10 text-center">
-                        {(predict != undefined)? predict : ""}
-                    </div>
                 </>
                 }
                 {!file &&

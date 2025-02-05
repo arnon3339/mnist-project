@@ -1,25 +1,27 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import pica from "pica";
+import { PredictContext } from "./contexts/predict";
 
 export default function WhiteBord() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
     const [isDrawing, setIsDrawing] = useState(false);
     const [canvasSize, setCanvasSize] = useState({ width: 500, height: 500 });
-    const [canvasLineWidth, setCanvasLineWidth] = useState(40);
-    const [predict, setPredict] = useState<number | undefined>(undefined);
+    const [canvasLineWidth, setCanvasLineWidth] = useState(50);
+    // const [predict, setPredict] = useState<number | undefined>(undefined);
+    const {setPredict} = useContext(PredictContext);
     const picaInstance = pica();
 
     // Function to update the canvas size based on window width
     const updateCanvasSize = () => {
         if (window.innerWidth <= 768) {
             setCanvasSize({ width: 300, height: 300 });
-            setCanvasLineWidth(20);
+            setCanvasLineWidth(25);
         } else {
             setCanvasSize({ width: 500, height: 500 });
-            setCanvasLineWidth(40);
+            setCanvasLineWidth(50);
         }
     };
 
@@ -49,7 +51,7 @@ export default function WhiteBord() {
                     grayArray[i / 4] = pixelArray[i + 3];
                 }
 
-                const res = await fetch('api/py/drawimg', {
+                const res = await fetch('api/py/testimg', {
                     method: "POST",
                     body: JSON.stringify({
                         array: Array.from(grayArray|| [])
@@ -171,9 +173,6 @@ export default function WhiteBord() {
                 onClick={getPredict}>
                 Predict
             </button>
-            <div className="text-2xl w-10 h-10 text-center">
-                {(predict != undefined)? predict : ""}
-            </div>
         </div>
     );
 };
