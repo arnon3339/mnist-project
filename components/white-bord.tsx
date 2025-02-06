@@ -104,6 +104,7 @@ export default function WhiteBord() {
         const { offsetX, offsetY } = getCoordinates(e);
         ctxRef.current.beginPath();
         ctxRef.current.moveTo(offsetX, offsetY);
+        document.body.style.overflow = 'hidden';
         setIsDrawing(true);
     };
 
@@ -119,6 +120,7 @@ export default function WhiteBord() {
     const stopDrawing = () => {
         if (!ctxRef.current) return;
         ctxRef.current.closePath();
+        document.body.style.overflow = 'auto';
         setIsDrawing(false);
     };
 
