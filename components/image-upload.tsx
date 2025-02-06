@@ -96,8 +96,8 @@ export default function ImageUpload() {
             <div className="flex flex-col justify-center items-center gap-y-2">
                 {file &&
                 <>
-                    <div className="w-[500px] h-[500px] relative flex flex-col justify-center items-center
-                    max-md:w-[300px] max-md:h-[300px]">
+                    <div className="w-[500px] relative flex flex-col justify-center items-center
+                    max-md:w-[300px]">
                         <Img
                             src={file}
                             layout="intrinsic"
