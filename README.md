@@ -5,48 +5,43 @@
   </a>
 </p>
 
-<p align="center">Next.j 14 project that uses <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
+<p align="center">A Next.js 14 project utilizing <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
 
 <br/>
 
 ## Introduction
 
-This is the project to predict the digit value from uploaded image and drawing panel. The fronted is created by Nextjs 14. It uses FastAPI to handle image data and use it as a test image with tunned CNN model. The CNN project is a separated [repository](https://github.com/arnon3339/mnist-model.git)
+This project predicts digit values from an uploaded image or a drawing panel. The frontend is built using **Next.js 14**, while **FastAPI** handles image processing and model inference. The CNN model is maintained in a separate [repository](https://github.com/arnon3339/mnist-model.git).
 
 ## Demo
 
-https://mnist-project.vercel.app/
+Live deployment: [mnist-project.vercel.app](https://mnist-project.vercel.app/)
 
-## Repositories
-
-Deployment: https://github.com/arnon3339/mnist-project.git  
-CNN model: https://github.com/arnon3339/mnist-model.git  
-Docker deployment: https://github.com/arnon3339/mnist-model.git
 
 ## Deploy Your Own
 
-You can clone & deploy it to Vercel with one click:
+You can clone & deploy this project to **Vercel** with one click:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farnon3339%2Fmnist-project%2Ftree%2Fmain)
 
 ## Developing Locally
 
-You can clone & create this repo with the following command
+Clone this repository and set up the project with the following command:
 
 ```bash
 npx create-next-app nextjs-fastapi --example "https://github.com/arnon3339/mnist-project.git"
 ```
 
-## Getting Started
+### Getting Started
 
-First, create and activate a virtual environment:
+First, create and activate a **virtual environment**:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-Then, install the dependencies:
+Then, install dependencies:
 
 ```bash
 npm install
@@ -56,7 +51,7 @@ yarn
 pnpm install
 ```
 
-Then, run the development server(python dependencies will be installed automatically here):
+Start the development server (Python dependencies will be installed automatically):
 
 ```bash
 npm run dev
@@ -66,20 +61,26 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-The FastApi server will be running on [http://127.0.0.1:8000](http://127.0.0.1:8000) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
+The **FastAPI** server will run on [http://127.0.0.1:8000](http://127.0.0.1:8000). You can modify the port in `package.json` (and also update `next.config.js`).
 
 ## Dataset
 
-The CNN model use mnist dataset that is the open source. It can be found in [Kraggle](https://www.kaggle.com). An image can be uploaded for digit prediction.
+The CNN model uses the **MNIST dataset**, which is publicly available. You can find it on [Kaggle](https://www.kaggle.com). Users can upload an image for digit prediction.
+
+## Repositories
+
+- **Deployment:** [mnist-project](https://github.com/arnon3339/mnist-project.git)  
+- **CNN Model:** [mnist-model](https://github.com/arnon3339/mnist-model.git)  
+- **Docker Deployment:** *(Coming soon)*
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To explore more about the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [FastAPI Documentation](https://fastapi.tiangolo.com/) - learn about FastAPI features and API.
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - An interactive Next.js tutorial.
+- [FastAPI Documentation](https://fastapi.tiangolo.com/) - Learn about FastAPI features and API.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+For more details, check out the [Next.js GitHub repository](https://github.com/vercel/next.js/) – contributions and feedback are welcome!
