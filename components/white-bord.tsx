@@ -105,6 +105,7 @@ export default function WhiteBord() {
         ctxRef.current.beginPath();
         ctxRef.current.moveTo(offsetX, offsetY);
         document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
         setIsDrawing(true);
     };
 
@@ -121,6 +122,7 @@ export default function WhiteBord() {
         if (!ctxRef.current) return;
         ctxRef.current.closePath();
         document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
         setIsDrawing(false);
     };
 
