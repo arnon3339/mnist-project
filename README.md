@@ -7,80 +7,72 @@
 
 <p align="center">A Next.js 14 project utilizing <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
 
-<br/>
+---
 
-## Introduction
+## 🚀 Introduction
 
-This project predicts digit values from an uploaded image or a drawing panel. The frontend is built using **Next.js 14**, while **FastAPI** handles image processing and model inference. The CNN model is maintained in a separate [repository](https://github.com/arnon3339/mnist-model.git).
+**Digit Prediction with CNN** is a web application that predicts handwritten digit values from either an uploaded image or a drawing panel. The frontend is built using **Next.js 14**, while the backend, powered by **FastAPI**, processes images and performs model inference. The Convolutional Neural Network (CNN) model used for predictions is maintained in a separate [repository](https://github.com/arnon3339/mnist-model.git).
 
-## Demo
+## 🌍 Live Demo
 
-Live deployment: [mnist-project.vercel.app](https://mnist-project.vercel.app/)
+Check out the live deployment: [MNIST Project](https://mnist-project.vercel.app/)
 
-
-## Deploy Your Own
+## 📦 Deploy Your Own
 
 You can clone & deploy this project to **Vercel** with one click:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farnon3339%2Fmnist-project%2Ftree%2Fmain)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farnon3339%2Fnextjs-fastapi-emojiiai%2Ftree%2Fmain)
 
-## Developing Locally
+## 📦 Developing Locally
 
-Clone this repository and set up the project with the following command:
+### 1️⃣ Clone the Repository
 
 ```bash
-npx create-next-app nextjs-fastapi --example "https://github.com/arnon3339/mnist-project.git"
+git clone https://github.com/arnon3339/mnist-project.git
+cd mnist-project
 ```
 
-### Getting Started
-
-First, create and activate a **virtual environment**:
+### 2️⃣ Set Up a Virtual Environment (Backend)
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # macOS/Linux
+venv\Scripts\activate  # Windows
 ```
 
-Then, install dependencies:
+### 3️⃣ Install Dependencies
 
 ```bash
-npm install
-# or
-yarn
-# or
-pnpm install
+npm install  # or yarn or pnpm install
 ```
 
-Start the development server (Python dependencies will be installed automatically):
+### 4️⃣ Start the Development Server
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm run dev  # or yarn dev or pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+The **Next.js** frontend runs on [http://localhost:3000](http://localhost:3000).
+The **FastAPI** backend runs on [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-The **FastAPI** server will run on [http://127.0.0.1:8000](http://127.0.0.1:8000). You can modify the port in `package.json` (and also update `next.config.js`).
+Modify the backend port in `package.json` if needed and update `next.config.js` accordingly.
 
-## Dataset
+## 📊 Dataset
 
-The CNN model uses the **MNIST dataset**, which is publicly available. You can find it on [Kaggle](https://www.kaggle.com). Users can upload an image for digit prediction.
+This project utilizes the **MNIST dataset**, a well-known dataset for handwritten digit recognition. The dataset is publicly available on platforms such as [Kaggle](https://www.kaggle.com/). Users can upload an image or draw a digit for prediction.
 
-## Repositories
+## 📂 Project Repositories
 
-- **Deployment:** [mnist-project](https://github.com/arnon3339/mnist-project.git)  
-- **CNN Model:** [mnist-model](https://github.com/arnon3339/mnist-model.git)  
-- **Docker Deployment:** *(Coming soon)*
+- **Frontend & API:** [MNIST Project](https://github.com/arnon3339/mnist-project.git)
+- **CNN Model:** [MNIST Model](https://github.com/arnon3339/mnist-model.git)
+- **Docker Deployment:** *(Coming soon!)*
 
-## Learn More
+## 📚 Learn More
 
-To explore more about the technologies used in this project:
+Explore the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - An interactive Next.js tutorial.
-- [FastAPI Documentation](https://fastapi.tiangolo.com/) - Learn about FastAPI features and API.
+- 📖 [Next.js Documentation](https://nextjs.org/docs) – Learn about Next.js features and API.
+- 🎓 [Next.js Interactive Tutorial](https://nextjs.org/learn)
+- ⚡ [FastAPI Documentation](https://fastapi.tiangolo.com/)
 
-For more details, check out the [Next.js GitHub repository](https://github.com/vercel/next.js/) – contributions and feedback are welcome!
+For contributions and feedback, check out the [Next.js GitHub repository](https://github.com/vercel/next.js/). Happy coding! 🚀
