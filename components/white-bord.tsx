@@ -11,7 +11,7 @@ export default function WhiteBord() {
     const [canvasSize, setCanvasSize] = useState({ width: 500, height: 500 });
     const [canvasLineWidth, setCanvasLineWidth] = useState(50);
     // const [predict, setPredict] = useState<number | undefined>(undefined);
-    const {setPredict} = useContext(PredictContext);
+    const {setPredict, setLoading} = useContext(PredictContext);
     const picaInstance = pica();
 
     // Function to update the canvas size based on window width
@@ -27,7 +27,7 @@ export default function WhiteBord() {
 
     const getPredict= async(e: any) => {
         e.preventDefault();
-        
+        setLoading(true);
         if (canvasRef.current) {
             const targetWidth = 28;
             const targetHeight = 28;
@@ -67,6 +67,8 @@ export default function WhiteBord() {
             }; 
 
         }
+
+        setLoading(false)
     }
 
     useEffect(() => {
