@@ -37,7 +37,7 @@ export default function Predict() {
                 </div>
             </div>
         }
-        {predict != undefined && loading &&
+        {predict == undefined && loading &&
             <div className="absolute top-0 left-0 z-20 bg-gray-400 flex justify-center items-center
                 h-full w-full bg-opacity-50" onClick={(e: any) => {
                         e.stopPropagation()
